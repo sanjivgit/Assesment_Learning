@@ -1,0 +1,86 @@
+.Logo {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.Assesment_Tag {
+  font-size: 25px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.Right_Bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Navbar_Toggler {
+  border: none !important;
+}
+
+.Navbar_Toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.Badge {
+  margin-right: 15px !important;
+}
+
+.Toggler_Wrap {
+  display: none;
+}
+
+.Offcanvas_Menue {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  cursor: pointer;
+  padding: 5px;
+  color: #335c76;
+}
+
+.Offcanvas_Menue:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Offcanvas_Menue > :first-child {
+  margin-right: 20px;
+}
+
+.Offcanvas_Profile {
+  border-top: 1px solid gray;
+  color: black !important;
+}
+.Offcanvas_Profile > :first-child {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  margin-right: 7px;
+}
+
+/* /////////////// Media Query /////////////////// */
+
+@media (min-width: 992px) {
+  .Logo {
+    display: none;
+  }
+}
+
+@media (max-width: 468px) {
+  .Assesment_Tag {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 992px) {
+  .Avatar_Icon {
+    display: none !important;
+  }
+
+  .Toggler_Wrap {
+    display: initial;
+  }
+}
