@@ -1,74 +1,42 @@
 import React, { useState } from "react";
 import "./sidebar.css";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import { menu } from "../../menu";
+import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 
 function Sidebar() {
-  const [handleShow, setHandleShow] = useState("");
+  const [open, setOpen] = useState(false);
+  const [openOnHover, setOpenOnHover] = useState(false);
+
+  const toggle = () => {
+    setOpen(!open);
+  };
 
   return (
-    <div className="Sidebar_Container">
-      <div className="Sidebar_Wrap" onMouseOver={() => setHandleShow(true)}>
-        <img className="Sidebar_Logo" src="/images/BreatheLogo.jpg" alt="" />
-        <img className="Sidebar_Icons" src="/images/DCM.svg" alt="" />
-        <img className="Sidebar_Icons" src="/images/assessment.svg" alt="" />
-        <img
-          className="Sidebar_Icons"
-          src="/images/Content_Management.svg"
-          alt=""
+    <div
+      className={`Sidebar_Container ${
+        open ? "Sidebar_Effect" : openOnHover && "Sidebar_Hover"
+      } `}
+      onMouseOver={() => setOpenOnHover(true)}
+      onMouseLeave={() => setOpenOnHover(false)}
+    >
+      {openOnHover && (
+        <ChevronRightIcon
+          onClick={toggle}
+          className={`Toggle_Icon ${open && "Toggle_Transition"}`}
         />
-        <img className="Sidebar_Icons" src="/images/Homework.svg" alt="" />
-        <img className="Sidebar_Icons" src="/images/Student_Board.svg" alt="" />
-        <img className="Sidebar_Icons" src="/images/Engagement.svg" alt="" />
-        <img className="Sidebar_Icons" src="/images/Global_Chat.svg" alt="" />
-        <img className="Sidebar_Icons" src="/images/Blogs.svg" alt="" />
+      )}
+      <div className={`p-2 ${openOnHover && "Sidebar_Wrap"}`}>
+        <div className="Sidebar_Header">
+          <img src="images/BreatheLogo.jpg" alt="" />
+          {open || openOnHover ? <span>Breathe4</span> : ""}
+        </div>
+        {menu.map((item) => (
+          <div className="Sidebar_Menu">
+            <img className="pl-1" src={`images/${item.icon}`} alt="" />
+            {open || openOnHover ? <span>{item.title}</span> : ""}
+          </div>
+        ))}
       </div>
-      <Offcanvas
-        className="Offcanvas_Sidebar"
-        show={handleShow}
-        onMouseLeave={() => setHandleShow(false)}
-      >
-        <Offcanvas.Header>
-          <img
-            style={{ width: "72px", height: "72px" }}
-            src="/images/BreatheLogo.jpg"
-            alt=""
-          />
-        </Offcanvas.Header>
-        <Offcanvas.Body>
-          <div className="Offcanvas_Menue">
-            <img src="/images/DCM.svg" alt="" />
-            <span>Digital Class Management</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Assessment.svg" alt="" />
-            <span>Assesment</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Content_Management.svg" alt="" />
-            <span>Content Management</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Homework.svg" alt="" />
-            <span>Homework Management</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Student_Board.svg" alt="" />
-            <span>Student Board</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Engagement.svg" alt="" />
-            <span>Engagement</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Global_Chat.svg" alt="" />
-            <span>Chat</span>
-          </div>
-          <div className="Offcanvas_Menue">
-            <img src="/images/Blogs.svg" alt="" />
-            <span>Blogs</span>
-          </div>
-        </Offcanvas.Body>
-      </Offcanvas>
     </div>
   );
 }

@@ -2,13 +2,8 @@
   display: flex;
 }
 
-.Assesment > :first-child {
-  flex: 0.5;
-  border-right: 1px solid rgba(0, 0, 0, 0.2);
-}
-
 .Assesment_Wrap {
-  flex: 11.5;
+  flex: 1;
 }
 
 /* /////////////// Media Query /////////////// */

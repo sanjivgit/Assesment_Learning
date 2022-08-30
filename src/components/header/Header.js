@@ -6,11 +6,12 @@ import { Badge } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import Avatar from "@mui/material/Avatar";
 import Offcanvas from "react-bootstrap/Offcanvas";
+import { menu } from "../../menu";
 
 function Header() {
   return (
     <>
-      <Navbar bg="white" expand="lg">
+      <Navbar bg="white" expand="lg" className="Navbar_Container">
         <Container className="m-2" fluid>
           <img className="Logo" src="/images/BreatheLogo.jpg" alt="" />
           <span className="Assesment_Tag">Assesment</span>
@@ -39,39 +40,13 @@ function Header() {
                   </Offcanvas.Title>
                 </Offcanvas.Header>
                 <Offcanvas.Body>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/DCM.svg" alt="" />
-                    <span>Digital Class Management</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Assessment.svg" alt="" />
-                    <span>Assesment</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Content_Management.svg" alt="" />
-                    <span>Content Management</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Homework.svg" alt="" />
-                    <span>Homework Management</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Student_Board.svg" alt="" />
-                    <span>Student Board</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Engagement.svg" alt="" />
-                    <span>Engagement</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Global_Chat.svg" alt="" />
-                    <span>Chat</span>
-                  </div>
-                  <div className="Offcanvas_Menue">
-                    <img src="/images/Blogs.svg" alt="" />
-                    <span>Blogs</span>
-                  </div>
-                  <div className="Offcanvas_Profile Offcanvas_Menue">
+                  {menu.map((item) => (
+                    <div className="Sidebar_Menu">
+                      <img src={`images/${item.icon}`} alt="" />
+                      <span>{item.title}</span>
+                    </div>
+                  ))}
+                  <div className="Offcanvas_Profile">
                     <Avatar alt="XploreSense" src="images/7.jpeg" />
                     <span>Profile</span>
                   </div>
