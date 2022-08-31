@@ -11,7 +11,7 @@ import { menu } from "../../menu";
 function Header() {
   return (
     <>
-      <Navbar bg="white" expand="lg" className="Navbar_Container">
+      <Navbar bg="white" expand="lg" className="shadow">
         <Container className="m-2" fluid>
           <img className="Logo" src="/images/BreatheLogo.jpg" alt="" />
           <span className="Assesment_Tag">Assesment</span>

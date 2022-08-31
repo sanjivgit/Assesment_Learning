@@ -13,29 +13,29 @@ function Sidebar() {
 
   return (
     <div
-      className={`Sidebar_Container ${
-        open ? "Sidebar_Effect" : openOnHover && "Sidebar_Hover"
-      } `}
+      className={`Sidebar_Container shadow ${open && "Sidebar_Effect"} `}
       onMouseOver={() => setOpenOnHover(true)}
       onMouseLeave={() => setOpenOnHover(false)}
     >
-      {openOnHover && (
-        <ChevronRightIcon
-          onClick={toggle}
-          className={`Toggle_Icon ${open && "Toggle_Transition"}`}
-        />
-      )}
-      <div className={`p-2 ${openOnHover && "Sidebar_Wrap"}`}>
-        <div className="Sidebar_Header">
-          <img src="images/BreatheLogo.jpg" alt="" />
-          {open || openOnHover ? <span>Breathe4</span> : ""}
-        </div>
-        {menu.map((item) => (
-          <div className="Sidebar_Menu">
-            <img className="pl-1" src={`images/${item.icon}`} alt="" />
-            {open || openOnHover ? <span>{item.title}</span> : ""}
+      <div className={`${openOnHover && "Sidebar_Hover shadow"}`}>
+        {openOnHover && (
+          <ChevronRightIcon
+            onClick={toggle}
+            className={`Toggle_Icon ${open && "Toggle_Transition"}`}
+          />
+        )}
+        <div className={`p-2 vh-100`}>
+          <div className="Sidebar_Header">
+            <img src="images/BreatheLogo.jpg" alt="" />
+            {open || openOnHover ? <span>Breathe4</span> : ""}
           </div>
-        ))}
+          {menu.map((item) => (
+            <div className="Sidebar_Menu">
+              <img className="pl-1" src={`images/${item.icon}`} alt="" />
+              {open || openOnHover ? <span>{item.title}</span> : ""}
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

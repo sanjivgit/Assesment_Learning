@@ -2,11 +2,11 @@
   height: 100vh;
   width: 70px;
   background-color: white;
-  transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+  transition: all 0.5s cubic-bezier(0.77, 0, 0.175, 1);
   position: relative;
-  -webkit-box-shadow: 3px 0px 5px 0px rgba(171, 158, 171, 1);
+  /* -webkit-box-shadow: 3px 0px 5px 0px rgba(171, 158, 171, 1);
   -moz-box-shadow: 3px 0px 5px 0px rgba(171, 158, 171, 1);
-  box-shadow: 3px 0px 5px 0px rgba(171, 158, 171, 1);
+  box-shadow: 3px 0px 5px 0px rgba(171, 158, 171, 1); */
   margin-right: 5px;
 }
 
@@ -32,20 +32,13 @@
 }
 
 .Sidebar_Hover {
+  background-color: white;
   width: 270px;
   position: absolute;
   top: 0;
   left: 0;
+  bottom: 0;
   z-index: 2;
-}
-
-.Sidebar_Wrap {
-  width: 270px;
-}
-
-.Sidebar_Menu {
-  padding: 10px;
-  cursor: pointer;
 }
 
 .Sidebar_Header {
@@ -65,6 +58,11 @@
   margin-left: 15px;
 }
 
+.Sidebar_Menu {
+  padding: 10px;
+  cursor: pointer;
+}
+
 .Sidebar_Menu:hover {
   background-color: aliceblue;
 }
@@ -73,8 +71,4 @@
   width: 25px;
   height: 25px;
   margin-right: 10px;
-}
-
-.Sidebar_Menu > span {
-  width: 270px;
 }
