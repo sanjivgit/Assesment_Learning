@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Sidebar from "./components/sidebar/Sidebar";
 import Header from "./components/header/Header";
 import Create from "./pages/create/Create";
-import Feed from "./pages/feed/Feed";
+import Assessment from "./pages/assessment/Assessment";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         {/* /////// Main Container //////////// */}
         <Router>
           <Routes>
-            <Route exact path="/" element={<Create />} />
-            <Route path="/feed" element={<Feed />} />
+            <Route exact path="/" element={<Assessment />} />
+            <Route path="/create" element={<Create />} />
           </Routes>
         </Router>
       </div>

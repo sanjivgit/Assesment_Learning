@@ -1,8 +1,26 @@
 .create_container {
   height: calc(100vh - 105px);
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.assessment_input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
 }
 
 .create_button {
   background-color: #f77f00 !important;
   color: white !important;
+}
+
+/* ////////////////// Media Query /////////////////// */
+@media (max-width: 420px) {
+  .assessment_input {
+    width: 95%;
+  }
 }
