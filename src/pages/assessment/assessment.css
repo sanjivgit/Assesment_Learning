@@ -1,6 +1,7 @@
 .assessment_container {
-  height: calc(100vh - 105px);
-  overflow-y: scroll;
+  /* height: calc(100vh - 105px); */
+  /* height: 100%; */
+  /* overflow-y: scroll; */
 }
 
 .create_button {

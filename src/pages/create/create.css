@@ -1,11 +1,11 @@
-.create_container {
+/* .create_container {
   height: calc(100vh - 105px);
   overflow-y: scroll;
 }
 
-::-webkit-scrollbar {
+.create_container::-webkit-scrollbar {
   display: none;
-}
+} */
 
 .assessment_input {
   border: none;

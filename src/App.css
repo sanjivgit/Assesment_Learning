@@ -6,6 +6,15 @@
   flex: 1;
 }
 
+.Main_Container {
+  height: calc(100vh - 105px);
+  overflow-y: scroll;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 /* /////////////// Media Query /////////////// */
 
 @media (max-width: 992px) {

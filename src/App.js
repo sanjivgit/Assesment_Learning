@@ -12,12 +12,14 @@ function App() {
       <div className="Assesment_Wrap">
         <Header />
         {/* /////// Main Container //////////// */}
-        <Router>
-          <Routes>
-            <Route exact path="/" element={<Assessment />} />
-            <Route path="/create" element={<Create />} />
-          </Routes>
-        </Router>
+        <div className="m-3 Main_Container">
+          <Router>
+            <Routes>
+              <Route exact path="/" element={<Assessment />} />
+              <Route path="/create" element={<Create />} />
+            </Routes>
+          </Router>
+        </div>
       </div>
     </div>
   );
