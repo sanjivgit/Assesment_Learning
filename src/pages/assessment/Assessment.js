@@ -12,7 +12,7 @@ function Assessment() {
           vitae hic officiis?
         </span>
         <Link to="/create">
-          <button className="btn create_button">Create</button>
+          <button className="btn assessment_button">Create</button>
         </Link>
       </div>
     </div>
